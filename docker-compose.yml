@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app-container:
+    image: explore-experts-app:1
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/explore-experts-app
+    ports:
+      - "8080:8080"
