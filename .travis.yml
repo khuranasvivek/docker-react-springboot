@@ -17,7 +17,7 @@ script:
   - mvn clean package
  
 after_install:
-  - docker-compose up
+  - docker-compose up --build
   
 deploy:
     provider: elasticbeanstalk
