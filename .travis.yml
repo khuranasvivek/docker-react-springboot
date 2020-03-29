@@ -14,3 +14,16 @@ before_install:
 script:
   - mvn test
   - mvn clean package
+  
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "explore-expert"
+    env: "ExploreExpert-env"
+    bucket_name: "elasticbeanstalk-us-east-2-479814592172"
+    bucket_path: "explore-expert"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secure: "$AWS_SECRET_KEY"
