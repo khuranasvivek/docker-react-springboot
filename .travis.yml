@@ -10,11 +10,14 @@ services:
     
 before_install:
   - docker-compose build
-  - docker-compose up
+
     
 script:
   - mvn test
   - mvn clean package
+ 
+after_install:
+  - docker-compose up
   
 deploy:
     provider: elasticbeanstalk
