@@ -8,7 +8,9 @@ sudo: required
 services:
     - docker
     
+before_install:
+  - docker-compose build   
+    
 script:
   - mvn test
   - mvn clean package
-  - docker-compose build
