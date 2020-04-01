@@ -3,10 +3,22 @@ version: '3'
 services:
   app-container:
     image: explore-experts-app:1
+    
     build:
-      context: ./
-      dockerfile: Dockerfile
-    volumes:
-      - /data/explore-experts-app
+      context: ./                   # It means, this service (i.e app-container) uses an image that is built from the Dockerfile 
+                                    # and ./ indicated that docker file is kept in the current directory
+      dockerfile: Dockerfile        # This is the name of that docker file that is being used in above line
+    
+      
+    #volumes:
+     # - .:/usr/app/explore-experts-code     # Volumes key mounts the project directory (current directory in this case) on the host to 
+                                            # /usr/app/explore-experts-code inside the container
+                                            # allowing you to modify the code on the fly, 
+                                            # without having to rebuild the image. 
+                                            
+   # environment:
+    #  FLASK_ENV: development        # The environment key sets the FLASK_ENV environment variable, 
+                                    # which tells flask run to run in development mode and reload the code on change. 
+                                    # This mode should only be used in development.
     ports:
-      - "8080:8080"
+      - "8080:8080"                 # Forward the exposed port 8080 on the container to port 8080 on the host machine
