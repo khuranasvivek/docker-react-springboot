@@ -12,12 +12,14 @@ services:
 script:
   - mvn test
   - mvn clean package
+  #- mvnw install
     
-before_install:
-  - docker-compose build
+#before_install:
+  
 
     
 after_install:
+  - docker-compose build
   - docker-compose up
   
 deploy:
