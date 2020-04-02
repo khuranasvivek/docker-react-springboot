@@ -14,6 +14,8 @@ script:
   - mvn clean 
   - mvn package
 
+before_install:
+cd target
 
 after_install:
   - docker-compose build
