@@ -8,7 +8,6 @@ sudo: required
 services:
     - docker
     
-    
 script:
   - mvn test
   - mvn clean 
