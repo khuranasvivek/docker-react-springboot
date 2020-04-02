@@ -5,7 +5,7 @@ WORKDIR /usr/app
 
 VOLUME /tmp
 
-ADD ./target/explore-experts-0.0.1-SNAPSHOT.jar app.jar   
+ADD /home/travis/build/khuranasvivek/docker-react-springboot/target/explore-experts-0.0.1-SNAPSHOT.jar app.jar   
 # Copy the jar from local target directory to workdir in the image with given jar name
 
 
