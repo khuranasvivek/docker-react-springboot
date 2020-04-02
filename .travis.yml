@@ -12,6 +12,8 @@ services:
 script:
   - mvn test
   - mvn clean install
+  - beanstalk:upload-source-bundle beanstalk:create-application-version beanstalk:update-environment
+
 
 
 after_install:
