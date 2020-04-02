@@ -11,8 +11,7 @@ services:
     
 script:
   - mvn test
-  - mvn clean 
-  - mvn package
+  - mvn clean install
 
 
 after_install:
