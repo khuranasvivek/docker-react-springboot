@@ -8,14 +8,11 @@ sudo: required
 services:
     - docker
     
-before_install:
-    - cd target
     
 script:
   - mvn test
   - mvn clean 
   - mvn package
-
 
 
 after_install:
